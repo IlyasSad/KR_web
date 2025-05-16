@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Трекер Привычек</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ежедневный Трекер Привычек</h1>
+
+        <details>
+            <summary>Как использовать</summary>
+            <p>Добавляйте привычки, следите за их выполнением и обновляйте статус. Вы можете добавлять описание к привычкам, редактировать их, удалять и отслеживать по статусу (выполнена/не выполнена).</p>
+        </details>
+
+        <div class="habit-form-section">
+            <h2>Добавить/Редактировать Привычку</h2>
+            <form id="habit-form">
+                <label for="habit-name">Название привычки:</label>
+                <input type="text" id="habit-name" placeholder="Например, Утренняя зарядка" required />
+
+                <label for="habit-description">Описание:</label>
+                <textarea id="habit-description" placeholder="Описание привычки (опционально)" rows="3"></textarea>
+
+                <label for="habit-status">Статус привычки:</label>
+                <select id="habit-status">
+                    <option value="active">Не выполнена</option>
+                    <option value="completed">Выполнена</option>
+                </select>
+
+                <button type="submit">Добавить Привычку</button>
+            </form>
+        </div>
+
+        <div class="habit-filter-section">
+            <h2>Фильтры</h2>
+            <label for="status-filter">Фильтр по статусу:</label>
+            <select id="status-filter">
+                <option value="all">Все</option>
+                <option value="active">Не выполненные</option>
+                <option value="completed">Выполненные</option>
+            </select>
+        </div>
+
+        <div class="habit-list-container">
+            <h2>Список Привычек</h2>
+            <div id="habit-list">
+            </div>
+        </div>
+    </div>
+    <script src="../src/model/model.js"></script>
+    <script src="../src/view/view.js"></script>
+    <script src="../src/presenter/presenter.js"></script>
+    <script src="../src/app/app.js"></script>
+</body>
+</html>
